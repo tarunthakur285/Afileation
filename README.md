@@ -51,7 +51,8 @@ afileation/
 
 **Do NOT upload your `.env` file to GitHub!**
 
-Create a `.env` file in both the `server/` and (if needed) `client/` directories. Here is an example for the backend:
+### Backend (`server/.env`)
+Create a `.env` file in the `server/` directory. Here is an example:
 
 ```env
 # .env (server)
@@ -68,6 +69,19 @@ NODE_ENV=development
 ```
 
 > **Note:** For Google and Gmail, use an [App Password](https://support.google.com/accounts/answer/185833) if 2FA is enabled.
+
+### Frontend (`client/.env`)
+Create a `.env` file in the `client/` directory. Here is an example:
+
+```env
+# .env (client)
+REACT_APP_SERVER_ENDPOINT=http://localhost:5000
+REACT_APP_GOOGLE_CLIENT_ID=your_google_oauth_client_id
+REACT_APP_RAZORPAY_KEY_ID=your_razorpay_key_id
+```
+- Change the value to your production server URL when deploying.
+- All React environment variables must start with `REACT_APP_`.
+- After editing the `.env` file, restart the React development server.
 
 ---
 
@@ -91,8 +105,8 @@ npm install
 ```
 
 ### 3. **Configure Environment Variables**
-- Copy the `.env` example above into `server/.env` and fill in your secrets.
-- **Never commit your `.env` file!**
+- Copy the `.env` examples above into `server/.env` and `client/.env` and fill in your secrets.
+- **Never commit your `.env` files!**
 
 ### 4. **Run the Application**
 ```bash
